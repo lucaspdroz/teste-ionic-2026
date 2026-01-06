@@ -82,7 +82,7 @@ export class BrailleComponent implements AfterViewInit {
   };
 
   pressedDots = [0, 0, 0, 0, 0, 0];
-  textData: string[] = 'braile! Muito fácil'
+  textData: string[] = 'braile é Muito fácil!'
     .toLowerCase()
     .split('')
     // quebre a linha quando passar de 5 caracteres

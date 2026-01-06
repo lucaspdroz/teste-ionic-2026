@@ -2,6 +2,15 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
+        <ion-select
+          placeholder="Idioma"
+          (ionChange)="changeLang($event.detail.value)"
+        >
+          <ion-select-option value="pt-br">Português</ion-select-option>
+          <ion-select-option value="en">English</ion-select-option>
+          <ion-select-option value="es">Español</ion-select-option>
+        </ion-select>
+
         <ion-list id="inbox-list">
           <ion-list-header>Blind Quiz</ion-list-header>
 
@@ -25,15 +34,6 @@
           </ion-menu-toggle>
           }
         </ion-list>
-        <!-- <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-          @for (label of labels; track label) {
-            <ion-item lines="none">
-              <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          }
-        </ion-list> -->
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

@@ -1,0 +1,18 @@
+{
+  "COMMON": {
+    "OK": "Ok",
+    "CANCEL": "Cancelar"
+  },
+  "QUIZ": {
+    "HINT": "Encuentra la letra que coincide con la imagen de la letra braille",
+    "START": "Iniciar el cuestionario",
+    "SCORE": "Puntaje",
+    "RETRY": "Intentar otra vez",
+    "NEXT": "Siguiente"
+  },
+  "LOGIN": {
+    "TITLE": "Adentrar",
+    "EMAIL": "E-mail",
+    "PASSWORD": "Seña"
+  }
+}
