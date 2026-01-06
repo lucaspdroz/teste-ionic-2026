@@ -1,0 +1,13 @@
+<span> {{ minutes | number: '2.0' }}:{{ seconds | number: '2.0' }}</span>
+
+<button id="open-toast" hidden></button>
+
+<ion-toast
+  class="custom-toast"
+  trigger="open-toast"
+  message="Acabou o tempo!"
+  position="top"
+  [duration]="3000"
+  (didDismiss)="setRoleMessage($event)"
+  icon="globe"
+></ion-toast>

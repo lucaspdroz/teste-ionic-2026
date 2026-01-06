@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <braile-text></braile-text>
+
+  <ion-card>
+    <app-timer></app-timer>
+    <ion-button size="large" shape="round" id="bottom-start">
+      <ion-icon slot="icon-only" ios="help" md="help"></ion-icon>
+    </ion-button>
+
+    <ion-popover trigger="bottom-start" side="bottom" alignment="start">
+      <ng-template>
+        <ion-content class="ion-padding">Uma Ajuda sempre vem bem!</ion-content>
+      </ng-template>
+    </ion-popover>
+
+    @for (p of quizElements; track p; let i = $index) {
+    <ion-card-header>
+      <ion-card-title>{{ p.questions }}</ion-card-title>
+      <ion-card-subtitle>
+        Encontre a letra correspondente a imagem da letra braile
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- <p>{{ i + 1 }}. {{ p.title }}</p> -->
+      <img src="{{ p.url }}.png" alt="imagem da letra {{ p.title }}" />
+      <ion-radio-group value="quizElements">
+        <ion-grid>
+          @for (a of p.possibleAnswers; track a) {
+          <ion-row>
+            <ion-radio labelPlacement="end">{{ a.answer }}</ion-radio>
+          </ion-row>
+          }
+        </ion-grid>
+      </ion-radio-group>
+    </ion-card-content>
+    }
+    <ion-button>Proximo</ion-button>
+  </ion-card>
+</ion-content>
