@@ -51,5 +51,6 @@ export class AppComponent {
 
   changeLang(lang: string) {
     localStorage.setItem('lang', lang);
+    window.location.reload();
   }
 }

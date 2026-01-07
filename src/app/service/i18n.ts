@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
   constructor(private translate: TranslateService) { }
 
-  async init(lang: string = 'pt') {
+  async init(lang: string = 'pt-br') {
     try {
       const response = await fetch(`/assets/i18n/${lang}.json`);
       if (!response.ok) throw new Error('Lang not found');
@@ -14,8 +14,8 @@ export class LanguageService {
       this.translate.setTranslation(lang, translations, true);
       this.translate.use(lang);
     } catch {
-      if (lang !== 'pt') {
-        await this.init('pt');
+      if (lang !== 'pt-br') {
+        await this.init('pt-br');
       }
     }
   }
