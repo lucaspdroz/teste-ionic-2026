@@ -66,9 +66,9 @@ export class QuizPage implements OnInit {
       url: '/assets/braileIcons/a',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
-        { answer: 'A', isCorrect: false },
+        { answer: 'A', isCorrect: true },
         { answer: 'H', isCorrect: false },
-        { answer: 'B', isCorrect: true },
+        { answer: 'B', isCorrect: false },
         { answer: 'Z', isCorrect: false }
       ]
     }, {
@@ -116,7 +116,6 @@ export class QuizPage implements OnInit {
 
   constructor() {
     addIcons({ logoApple, settingsSharp, help });
-
   }
 
   handleChange(event: Event): void {
@@ -126,7 +125,6 @@ export class QuizPage implements OnInit {
 
   ngOnInit() {
   }
-
 
   @ViewChild('popover') popover!: HTMLIonPopoverElement;
 

@@ -33,7 +33,15 @@
         <ion-grid>
           @for (a of p.possibleAnswers; track a) {
           <ion-row>
-            <ion-radio labelPlacement="end">{{ a.answer }}</ion-radio>
+            @if (a.isCorrect) {
+            <ion-radio labelPlacement="end" color="success">{{
+              a.answer
+            }}</ion-radio>
+            } @else {
+            <ion-radio labelPlacement="end" color="danger">{{
+              a.answer
+            }}</ion-radio>
+            }
           </ion-row>
           }
         </ion-grid>
