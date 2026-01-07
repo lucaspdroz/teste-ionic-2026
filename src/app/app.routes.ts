@@ -9,10 +9,14 @@ export const routes: Routes = [
   {
     path: 'folder/:id',
     loadComponent: () =>
-      import('./folder/folder.page').then((m) => m.FolderPage),
+      import('./pages/folder/folder.page').then((m) => m.FolderPage),
   },
   {
     path: 'quiz',
-    loadComponent: () => import('./quiz/quiz.page').then( m => m.QuizPage)
+    loadComponent: () => import('./pages/quiz/quiz.page').then(m => m.QuizPage)
+  },
+  {
+    path: 'starwars-people',
+    loadComponent: () => import('./pages/starwars-people/starwars-people.page').then(m => m.StarwarsPeoplePage)
   },
 ];

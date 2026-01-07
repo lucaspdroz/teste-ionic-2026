@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonRow, IonRadio, IonRadioGroup, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonPopover } from '@ionic/angular/standalone';
-import { TimerComponent } from "../components/timer/timer.component";
-import { BrailleComponent } from '../components/braile-text/braile-text.component'
+import { TimerComponent } from "../../components/timer/timer.component";
+import { BrailleComponent } from '../../components/braile-text/braile-text.component'
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { help, logoApple, settingsSharp } from 'ionicons/icons';
