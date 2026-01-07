@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ 'STARWARS_PEOPLE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{
+        'STARWARS_PEOPLE.TITLE' | translate
+      }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  @for (person of characters; track person.url) {
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ person.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <strong>{{ 'STARWARS_PEOPLE.HEIGHT' | translate }}:</strong>
+        {{ person.height }} cm
+      </p>
+      <p>
+        <strong>{{ 'STARWARS_PEOPLE.MASS' | translate }}:</strong>
+        {{ person.mass }} kg
+      </p>
+    </ion-card-content>
+  </ion-card>
+  }
+</ion-content>

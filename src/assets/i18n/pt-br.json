@@ -14,5 +14,10 @@
     "TITLE": "Entrar",
     "EMAIL": "E-mail",
     "PASSWORD": "Senha"
+  },
+  "STARWARS_PEOPLE": {
+    "TITLE": "Personagens de Star Wars",
+    "HEIGHT": "Altura",
+    "MASS": "Massa"
   }
 }
