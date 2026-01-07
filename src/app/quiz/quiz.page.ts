@@ -4,18 +4,38 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonRow, IonRadio, IonRadioGroup, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonPopover } from '@ionic/angular/standalone';
 import { TimerComponent } from "../components/timer/timer.component";
 import { BrailleComponent } from '../components/braile-text/braile-text.component'
-import { Answer, Quiz } from '../models/quiz.model'
 import { IonIcon } from '@ionic/angular/standalone';
-
 import { addIcons } from 'ionicons';
 import { help, logoApple, settingsSharp } from 'ionicons/icons';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
   styleUrls: ['./quiz.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonContent, IonRadio, BrailleComponent, IonRadioGroup, IonHeader, IonRow, IonTitle, IonToolbar, CommonModule, FormsModule, TimerComponent, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonPopover]
+  imports: [
+    TranslateModule,
+    IonIcon,
+    IonContent,
+    IonRadio,
+    BrailleComponent,
+    IonRadioGroup,
+    IonHeader,
+    IonRow,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    TimerComponent,
+    IonButton,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardContent,
+    IonGrid,
+    IonPopover
+  ]
 })
 
 export class QuizPage implements OnInit {

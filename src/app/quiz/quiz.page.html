@@ -15,16 +15,15 @@
 
     <ion-popover trigger="bottom-start" side="bottom" alignment="start">
       <ng-template>
-        <ion-content class="ion-padding">Uma Ajuda sempre vem bem!</ion-content>
+        <ion-content class="ion-padding">{{
+          'QUIZ.HINT' | translate
+        }}</ion-content>
       </ng-template>
     </ion-popover>
 
     @for (p of quizElements; track p; let i = $index) {
     <ion-card-header>
       <ion-card-title>{{ p.questions }}</ion-card-title>
-      <ion-card-subtitle>
-        Encontre a letra correspondente a imagem da letra braile
-      </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -39,8 +38,8 @@
           }
         </ion-grid>
       </ion-radio-group>
+      <ion-button>{{ 'QUIZ.NEXT' | translate }}</ion-button>
     </ion-card-content>
     }
-    <ion-button>Proximo</ion-button>
   </ion-card>
 </ion-content>
