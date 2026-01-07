@@ -11,8 +11,8 @@ import { IonToast } from '@ionic/angular/standalone';
 })
 
 export class TimerComponent implements OnInit {
-  minutes = 0;
-  seconds = 2;
+  minutes = 3;
+  seconds = 0;
   timerInterval: any;
   showToast = !false;
 
