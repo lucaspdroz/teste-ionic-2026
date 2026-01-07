@@ -14,8 +14,8 @@ export class LanguageService {
       this.translate.setTranslation(lang, translations, true);
       this.translate.use(lang);
     } catch {
-      if (lang !== 'pt') {
-        await this.init('pt');
+      if (lang !== 'pt-br') {
+        await this.init('pt-br');
       }
     }
   }
