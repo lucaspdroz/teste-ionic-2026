@@ -21,7 +21,7 @@ export class AppComponent {
   ];
 
   async ngOnInit() {
-    const savedLang = localStorage.getItem('lang') || 'pt';
+    const savedLang = localStorage.getItem('lang') || 'pt-br';
     await this.langService.init(savedLang);
   }
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

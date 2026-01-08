@@ -1,0 +1,29 @@
+{
+  "COMMON": {
+    "OK": "OK",
+    "CANCEL": "キャンセル"
+  },
+  "QUIZ": {
+    "HINT": "点字の画像に一致する文字を見つけてください",
+    "QUESTION_NUMBER": "質問",
+    "YOUR_SCORE": "あなたのスコア",
+    "RESTART": "クイズを再開",
+    "START": "クイズを開始",
+    "SCORE": "あなたのスコア",
+    "RETRY": "再挑戦",
+    "NEXT": "次へ",
+    "RIGHT_ANSWER": "正解です！🎉",
+    "WRONG_ANSWER": "不正解です！",
+    "RESULT_TITLE": "クイズ結果"
+  },
+  "LOGIN": {
+    "TITLE": "ログイン",
+    "EMAIL": "メールアドレス",
+    "PASSWORD": "パスワード"
+  },
+  "STARWARS_PEOPLE": {
+    "TITLE": "スター・ウォーズのキャラクター",
+    "HEIGHT": "身長",
+    "MASS": "体重"
+  }
+}

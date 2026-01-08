@@ -97,6 +97,9 @@ export class BrailleComponent implements AfterViewInit {
       p.setup = () => {
         const canvas = p.createCanvas(p.windowWidth, 450);
         canvas.parent(this.canvasHost.nativeElement);
+        canvas.elt.tabIndex = 0;
+        canvas.elt.focus();
+
         p.textAlign(p.CENTER, p.CENTER);
         p.textSize(18);
       };
@@ -110,11 +113,15 @@ export class BrailleComponent implements AfterViewInit {
   }
 
   // ------------------ INPUT ------------------
-  @HostListener('window:keydown', ['$event'])
+  @HostListener('document:keydown', ['$event'])
   handleKey(event: KeyboardEvent) {
+    if (event.repeat) return; // <<< ESSENCIAL
+
+    event.preventDefault();
+
     const k = event.key.toLowerCase();
 
-    if (this.keyToDot[k]) {
+    if (k in this.keyToDot) {
       const idx = this.keyToDot[k] - 1;
       this.pressedDots[idx] = this.pressedDots[idx] ? 0 : 1;
       return;
