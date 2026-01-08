@@ -13,7 +13,8 @@
     "RETRY": "Retry",
     "NEXT": "Next",
     "RIGHT_ANSWER": "Correct answer! 🎉",
-    "WRONG_ANSWER": "Wrong answer!"
+    "WRONG_ANSWER": "Wrong answer!",
+    "RESULT_TITLE": "Quiz Results"
   },
   "LOGIN": {
     "TITLE": "Login",

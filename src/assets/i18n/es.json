@@ -13,7 +13,8 @@
     "RETRY": "Intentar otra vez",
     "NEXT": "Siguiente",
     "RIGHT_ANSWER": "¡Respuesta correcta! 🎉",
-    "WRONG_ANSWER": "¡Respuesta incorrecta!"
+    "WRONG_ANSWER": "¡Respuesta incorrecta!",
+    "RESULT_TITLE": "Resultados del cuestionario"
   },
   "LOGIN": {
     "TITLE": "Adentrar",
