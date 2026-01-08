@@ -1,0 +1,29 @@
+{
+  "COMMON": {
+    "OK": "Ok",
+    "CANCEL": "Cancel"
+  },
+  "QUIZ": {
+    "HINT": "Find the letter that matches the braille letter image",
+    "QUESTION_NUMBER": "Question",
+    "YOUR_SCORE": "Your Score",
+    "RESTART": "Restart Quiz",
+    "START": "Start Quiz",
+    "SCORE": "Your Score",
+    "RETRY": "Retry",
+    "NEXT": "Next",
+    "RIGHT_ANSWER": "Correct answer! 🎉",
+    "WRONG_ANSWER": "Wrong answer!",
+    "RESULT_TITLE": "Quiz Results"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password"
+  },
+  "STARWARS_PEOPLE": {
+    "TITLE": "Star Wars Characters",
+    "HEIGHT": "Height",
+    "MASS": "Mass"
+  }
+}
