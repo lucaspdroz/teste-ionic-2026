@@ -5,7 +5,7 @@ import { IonContent, IonButton, IonRow, IonRadio, IonRadioGroup, IonCard, IonCar
 import { TimerComponent } from "../../components/timer/timer.component";
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { help, logoApple, settingsSharp } from 'ionicons/icons';
+import { help } from 'ionicons/icons';
 import { TranslateModule } from '@ngx-translate/core';
 import { ToastController } from '@ionic/angular/standalone';
 import { LanguageService } from '../../service/i18n'
@@ -39,7 +39,7 @@ export class QuizPage implements OnInit {
   public quizElements = [
     {
       title: 'Inbox',
-      url: '/assets/braileIcons/b',
+      url: 'assets/braileIcons/b',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: 'A', isCorrect: false },
@@ -50,7 +50,7 @@ export class QuizPage implements OnInit {
     },
     {
       title: 'Inbox',
-      url: '/assets/braileIcons/r',
+      url: 'assets/braileIcons/r',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: 'N', isCorrect: false },
@@ -60,7 +60,7 @@ export class QuizPage implements OnInit {
       ]
     }, {
       title: 'Inbox',
-      url: '/assets/braileIcons/a',
+      url: 'assets/braileIcons/a',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: 'A', isCorrect: true },
@@ -70,7 +70,7 @@ export class QuizPage implements OnInit {
       ]
     }, {
       title: 'Inbox',
-      url: '/assets/braileIcons/i',
+      url: 'assets/braileIcons/i',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: 'A', isCorrect: false },
@@ -80,7 +80,7 @@ export class QuizPage implements OnInit {
       ]
     }, {
       title: 'Inbox',
-      url: '/assets/braileIcons/l',
+      url: 'assets/braileIcons/l',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: 'A', isCorrect: false },
@@ -90,7 +90,7 @@ export class QuizPage implements OnInit {
       ]
     }, {
       title: 'Inbox',
-      url: '/assets/braileIcons/e',
+      url: 'assets/braileIcons/e',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: 'A', isCorrect: false },
@@ -100,7 +100,7 @@ export class QuizPage implements OnInit {
       ]
     }, {
       title: 'Inbox',
-      url: '/assets/braileIcons/exclamation',
+      url: 'assets/braileIcons/exclamation',
       questions: "Que letra braile é essa?",
       possibleAnswers: [
         { answer: ';', isCorrect: false },
