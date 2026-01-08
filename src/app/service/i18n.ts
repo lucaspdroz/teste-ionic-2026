@@ -7,7 +7,7 @@ export class LanguageService {
 
   async init(lang: string = 'pt-br') {
     try {
-      const response = await fetch(`/assets/i18n/${lang}.json`);
+      const response = await fetch(`assets/i18n/${lang}.json`);
       if (!response.ok) throw new Error('Lang not found');
 
       const translations = await response.json();
