@@ -6,9 +6,14 @@
   "QUIZ": {
     "HINT": "Encontre a letra correspondente a imagem da letra braile",
     "START": "Começar o Quiz",
+    "QUESTION_NUMBER": "Pergunta",
+    "YOUR_SCORE": "Sua pontuação",
+    "RESTART": "Reiniciar Quiz",
     "SCORE": "Pontuação",
     "RETRY": "Tentar de novo",
-    "NEXT": "Próximo"
+    "NEXT": "Próximo",
+    "RIGHT_ANSWER": "Resposta correta! 🎉",
+    "WRONG_ANSWER": "Resposta errada!"
   },
   "LOGIN": {
     "TITLE": "Entrar",

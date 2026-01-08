@@ -19,4 +19,8 @@ export const routes: Routes = [
     path: 'starwars-people',
     loadComponent: () => import('./pages/starwars-people/starwars-people.page').then(m => m.StarwarsPeoplePage)
   },
+  {
+    path: 'braile-page',
+    loadComponent: () => import('./pages/braile-page/braile-page.page').then( m => m.BrailePagePage)
+  },
 ];

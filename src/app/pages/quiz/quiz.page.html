@@ -1,53 +1,68 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Quiz</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      {{ 'QUIZ.QUESTION_NUMBER' | translate }}
+      {{ currentIndex + 1 }} / {{ quizElements.length }}
+      <app-timer></app-timer>
+    </ion-card-title>
+  </ion-card-header>
 
-<ion-content [fullscreen]="false">
-  <braile-text></braile-text>
-
+  @if (currentQuestion) {
   <ion-card>
-    <app-timer></app-timer>
-    <ion-button size="large" shape="round" id="bottom-start">
-      <ion-icon slot="icon-only" ios="help" md="help"></ion-icon>
-    </ion-button>
-
-    <ion-popover trigger="bottom-start" side="bottom" alignment="start">
-      <ng-template>
-        <ion-content class="ion-padding">{{
-          'QUIZ.HINT' | translate
-        }}</ion-content>
-      </ng-template>
-    </ion-popover>
-
-    @for (p of quizElements; track p; let i = $index) {
     <ion-card-header>
-      <ion-card-title>{{ p.questions }}</ion-card-title>
+      <ion-card-title>{{ currentQuestion.questions }}</ion-card-title>
+      <ion-button size="small" shape="round" id="bottom-start">
+        <ion-icon slot="icon-only" ios="help" md="help"></ion-icon>
+      </ion-button>
+
+      <ion-popover trigger="bottom-start" side="bottom" alignment="start">
+        <ng-template>
+          <ion-content class="ion-padding">{{
+            'QUIZ.HINT' | translate
+          }}</ion-content>
+        </ng-template>
+      </ion-popover>
     </ion-card-header>
 
     <ion-card-content>
-      <!-- <p>{{ i + 1 }}. {{ p.title }}</p> -->
-      <img src="{{ p.url }}.png" alt="imagem da letra {{ p.title }}" />
-      <ion-radio-group value="quizElements">
+      <img
+        [src]="currentQuestion.url + '.png'"
+        [alt]="'imagem da letra ' + currentQuestion.title"
+      />
+
+      <ion-radio-group [(ngModel)]="selectedAnswer">
         <ion-grid>
-          @for (a of p.possibleAnswers; track a) {
+          @for (a of currentQuestion.possibleAnswers; track a) {
           <ion-row>
-            @if (a.isCorrect) {
-            <ion-radio labelPlacement="end" color="success">{{
-              a.answer
-            }}</ion-radio>
-            } @else {
-            <ion-radio labelPlacement="end" color="danger">{{
-              a.answer
-            }}</ion-radio>
-            }
+            <ion-radio [value]="a" labelPlacement="end">
+              {{ a.answer }}
+            </ion-radio>
           </ion-row>
           }
         </ion-grid>
       </ion-radio-group>
-      <ion-button>{{ 'QUIZ.NEXT' | translate }}</ion-button>
+
+      <ion-button
+        expand="block"
+        [disabled]="!selectedAnswer"
+        (click)="nextQuestion()"
+      >
+        {{ 'QUIZ.NEXT' | translate }}
+      </ion-button>
     </ion-card-content>
-    }
   </ion-card>
-</ion-content>
+  }@else {
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ 'QUIZ.RESULT_TITLE' | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ 'QUIZ.YOUR_SCORE' | translate }}: {{ score }}</p>
+      <ion-button expand="block" (click)="restartQuiz()">
+        {{ 'QUIZ.RESTART' | translate }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  }
+</ion-card>
