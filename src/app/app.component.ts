@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonSelect, IonSelectOption, IonList, IonListHeader, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, barChart, barChartOutline, barChartSharp } from 'ionicons/icons';
+import { bodyOutline, bodySharp, heartOutline, heartSharp, barChartOutline, barChartSharp } from 'ionicons/icons';
 import { LanguageService } from './service/i18n';
 
 @Component({
@@ -14,7 +14,8 @@ import { LanguageService } from './service/i18n';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
+    // { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
+    { title: 'Braile', url: '/braile-page', icon: 'body' },
     { title: 'Quiz', url: '/quiz', icon: 'bar-chart' },
     { title: 'Star Wars - Personagens', url: '/starwars-people', icon: 'heart' },
   ];
@@ -26,22 +27,12 @@ export class AppComponent {
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(private langService: LanguageService) {
     addIcons({
-      mailOutline,
-      mailSharp,
-      paperPlaneOutline,
-      paperPlaneSharp,
-      heartOutline,
+      bodyOutline,
+      bodySharp,
       barChartOutline,
       barChartSharp,
+      heartOutline,
       heartSharp,
-      archiveOutline,
-      archiveSharp,
-      trashOutline,
-      trashSharp,
-      warningOutline,
-      warningSharp,
-      bookmarkOutline,
-      bookmarkSharp
     });
   }
 

@@ -24,4 +24,8 @@ export class LanguageService {
     localStorage.setItem('lang', lang);
     this.init(lang);
   }
+
+  t(key: string, params?: Record<string, any>): string {
+    return this.translate.instant(key, params);
+  }
 }

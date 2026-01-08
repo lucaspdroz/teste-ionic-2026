@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonRow, IonRadio, IonRadioGroup, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonPopover } from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonRow, IonRadio, IonRadioGroup, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonGrid, IonPopover } from '@ionic/angular/standalone';
 import { TimerComponent } from "../../components/timer/timer.component";
-import { BrailleComponent } from '../../components/braile-text/braile-text.component'
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { help, logoApple, settingsSharp } from 'ionicons/icons';
 import { TranslateModule } from '@ngx-translate/core';
+import { ToastController } from '@ionic/angular/standalone';
+import { LanguageService } from '../../service/i18n'
 
 @Component({
   selector: 'app-quiz',
@@ -19,12 +20,8 @@ import { TranslateModule } from '@ngx-translate/core';
     IonIcon,
     IonContent,
     IonRadio,
-    BrailleComponent,
     IonRadioGroup,
-    IonHeader,
     IonRow,
-    IonTitle,
-    IonToolbar,
     CommonModule,
     FormsModule,
     TimerComponent,
@@ -114,21 +111,78 @@ export class QuizPage implements OnInit {
     }
   ];
 
-  constructor() {
-    addIcons({ logoApple, settingsSharp, help });
-  }
-
-  handleChange(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    console.log('Current value:', JSON.stringify(target.value));
-  }
-
-  ngOnInit() {
-  }
+  currentIndex = 0;
+  selectedAnswer: any = null;
+  score = 0;
 
   @ViewChild('popover') popover!: HTMLIonPopoverElement;
-
   isOpen = false;
+
+  constructor(
+    private toastCtrl: ToastController,
+    private langService: LanguageService
+  ) {
+    addIcons({ help });
+  }
+
+  ngOnInit() { }
+
+  /** Current step question */
+  get currentQuestion() {
+    return this.quizElements[this.currentIndex];
+  }
+
+  selectAnswer(answer: any) {
+    this.selectedAnswer = answer;
+  }
+
+  async nextQuestion() {
+    if (!this.selectedAnswer) return;
+
+    if (this.selectedAnswer.isCorrect) {
+      this.score++;
+
+      const RIGHT_ANSWER =
+        this.langService.t('QUIZ.RIGHT_ANSWER');
+
+      await this.showToast(RIGHT_ANSWER, 'success');
+
+      this.currentIndex++;
+      this.selectedAnswer = null;
+
+      // End of quiz
+      if (this.currentIndex >= this.quizElements.length) {
+        await this.showToast(
+          `Quiz finalizado! Pontuação: ${this.score}`,
+          'primary'
+        );
+      }
+    } else {
+      await this.showToast(
+        'Resposta incorreta. Tente novamente.',
+        'danger'
+      );
+    }
+  }
+
+  restartQuiz(): void {
+    this.currentIndex = 0;
+    this.selectedAnswer = null;
+    this.score = 0;
+  }
+
+  async showToast(
+    message: string,
+    color: 'success' | 'danger' | 'primary'
+  ) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 1500,
+      position: 'top',
+      color
+    });
+    toast.present();
+  }
 
   presentPopover(e: Event) {
     this.popover.event = e;
