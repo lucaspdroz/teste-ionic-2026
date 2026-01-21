@@ -21,6 +21,6 @@ export const routes: Routes = [
   },
   {
     path: 'braile-page',
-    loadComponent: () => import('./pages/braile-page/braile-page.page').then( m => m.BrailePagePage)
+    loadComponent: () => import('./pages/braile-page/braile-page.page').then(m => m.BrailePagePage)
   },
 ];
