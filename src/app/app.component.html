@@ -13,10 +13,8 @@
           <ion-select-option value="ja">日本語</ion-select-option>
           <ion-select-option value="de">Deutsch</ion-select-option>
         </ion-select>
-
         <ion-list id="inbox-list">
           <ion-list-header>Blind Quiz</ion-list-header>
-
           @for (p of appPages; track p; let i = $index) {
           <ion-menu-toggle auto-hide="false">
             <ion-item
@@ -30,7 +28,7 @@
                 aria-hidden="true"
                 slot="start"
                 [ios]="p.icon + '-outline'"
-                [md]="p.icon + '-sharp'"
+                [md]="p.icon"
               ></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
@@ -41,4 +39,37 @@
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
+
+  <!-- <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      @for (p of appPages; track p; let i = $index) {
+      <ion-tab-button
+        [tab]="p.tab"
+        [routerLink]="[p.url]"
+        routerLinkActive="active"
+      >
+        <ion-icon [name]="p.icon"></ion-icon>
+        {{ p.title }}
+      </ion-tab-button>
+      }
+    </ion-tab-bar>
+  </ion-tabs> -->
+
+  <nav class="floating-tabs">
+    <span
+      class="indicator"
+      [style.transform]="'translateX(' + activeIndex * 80 + 'px)'"
+    ></span>
+    @for (p of appPages; track p; let i = $index) {
+    <button
+      [routerLink]="p.url"
+      routerLinkActive="active"
+      (click)="setActive(i)"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <ion-icon [name]="p.icon"></ion-icon>
+      <span>{{ p.title }}</span>
+    </button>
+    }
+  </nav>
 </ion-app>
