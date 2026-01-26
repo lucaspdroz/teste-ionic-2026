@@ -123,6 +123,8 @@ ion-item.selected {
   left: 50%;
   transform: translateX(-50%);
 
+  border: solid 5px var(--ion-color-custom);
+
   height: 60px;
   padding: 12px;
   border-radius: 28px;
@@ -175,7 +177,7 @@ button {
   left: 5px;
 
   width: 72px;
-  height: 60px;
+  height: 46px;
 
   border-radius: 18px;
   background: var(--ion-color-custom);

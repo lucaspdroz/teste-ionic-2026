@@ -70,7 +70,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Braile', url: '/braile-page', icon: 'body-sharp', tab: 'braile-page' },
     { title: 'Quiz', url: '/quiz', icon: 'bar-chart-sharp', tab: 'quiz' },
-    { title: 'Star Wars', url: '/starwars-people', icon: 'heart', tab: 'starwars-people' },
+    { title: 'Personagem', url: '/starwars-people', icon: 'heart', tab: 'starwars-people' },
   ];
 
   activeIndex = 0;
