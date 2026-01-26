@@ -16,9 +16,6 @@ import {
   IonRouterOutlet,
   IonRouterLink,
   IonContent,
-  // IonTabBar,
-  // IonTabButton,
-  // IonTabs,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 
@@ -45,9 +42,6 @@ import { LanguageService } from './service/i18n';
   imports: [
     RouterLink,
     RouterLinkActive,
-    // IonTabButton,
-    // IonTabBar,
-    // IonTabs,
     IonApp,
     IonSplitPane,
     IonSelect,
